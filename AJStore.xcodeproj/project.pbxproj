@@ -24,9 +24,14 @@
 		5072FE8121F56913004E08C3 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8021F56913004E08C3 /* ReusableView.swift */; };
 		5072FE8321F56979004E08C3 /* ListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */; };
 		5072FE8621F56A1D004E08C3 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8521F56A1D004E08C3 /* Contants.swift */; };
+		5072FE8D21F5DD7E004E08C3 /* AddItemDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */; };
+		5072FE8F21F5E083004E08C3 /* AddItemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */; };
+		5072FE9121F5E0CA004E08C3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9021F5E0CA004E08C3 /* UIView+Extensions.swift */; };
+		AA0F95601FFE99A9BA0E7C4A /* Pods_AJStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		278FC2B2F8A45A3775554C97 /* Pods-AJStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-AJStore/Pods-AJStore.release.xcconfig"; sourceTree = "<group>"; };
 		5072FE4621F54BA3004E08C3 /* AJStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AJStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5072FE4921F54BA3004E08C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5072FE4E21F54BA3004E08C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ListItem.storyboard; sourceTree = "<group>"; };
@@ -46,6 +51,11 @@
 		5072FE8021F56913004E08C3 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewCell.swift; sourceTree = "<group>"; };
 		5072FE8521F56A1D004E08C3 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemDialog.xib; sourceTree = "<group>"; };
+		5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDialog.swift; sourceTree = "<group>"; };
+		5072FE9021F5E0CA004E08C3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AJStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E3D534BD58F68116304F0B /* Pods-AJStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AJStore/Pods-AJStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +63,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0F95601FFE99A9BA0E7C4A /* Pods_AJStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C42E93B97A3C91334F50247 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82E3D534BD58F68116304F0B /* Pods-AJStore.debug.xcconfig */,
+				278FC2B2F8A45A3775554C97 /* Pods-AJStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5072FE3D21F54BA3004E08C3 = {
 			isa = PBXGroup;
 			children = (
 				5072FE4821F54BA3004E08C3 /* AJStore */,
 				5072FE4721F54BA3004E08C3 /* Products */,
+				2C42E93B97A3C91334F50247 /* Pods */,
+				8852D1D00821C87267749445 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +164,7 @@
 				5072FE7421F559BF004E08C3 /* AppStoryboard.swift */,
 				5072FE7E21F568EF004E08C3 /* UITableView.swift */,
 				5072FE8021F56913004E08C3 /* ReusableView.swift */,
+				5072FE9021F5E0CA004E08C3 /* UIView+Extensions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -160,6 +183,8 @@
 				5072FE7821F5665A004E08C3 /* ListItemTableViewCell.xib */,
 				5072FE7A21F567B7004E08C3 /* ListItemHeader.xib */,
 				5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */,
+				5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */,
+				5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -172,6 +197,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		8852D1D00821C87267749445 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5072FE5821F54BA4004E08C3 /* Build configuration list for PBXNativeTarget "AJStore" */;
 			buildPhases = (
+				5470590B4D0A14D615A678A9 /* [CP] Check Pods Manifest.lock */,
 				5072FE4221F54BA3004E08C3 /* Sources */,
 				5072FE4321F54BA3004E08C3 /* Frameworks */,
 				5072FE4421F54BA3004E08C3 /* Resources */,
+				5072FE8721F5AD65004E08C3 /* ShellScript */,
+				E2BF7EE724B4383942FA9B63 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,22 +270,97 @@
 				5072FE5421F54BA4004E08C3 /* LaunchScreen.storyboard in Resources */,
 				5072FE5121F54BA4004E08C3 /* Assets.xcassets in Resources */,
 				5072FE7B21F567B7004E08C3 /* ListItemHeader.xib in Resources */,
+				5072FE8D21F5DD7E004E08C3 /* AddItemDialog.xib in Resources */,
 				5072FE4F21F54BA3004E08C3 /* ListItem.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5072FE8721F5AD65004E08C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		5470590B4D0A14D615A678A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AJStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2BF7EE724B4383942FA9B63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AJStore/Pods-AJStore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupKit/PopupKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AJStore/Pods-AJStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5072FE4221F54BA3004E08C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5072FE9121F5E0CA004E08C3 /* UIView+Extensions.swift in Sources */,
 				5072FE7521F559BF004E08C3 /* AppStoryboard.swift in Sources */,
 				5072FE8121F56913004E08C3 /* ReusableView.swift in Sources */,
 				5072FE6B21F55856004E08C3 /* ListItemInteractor.swift in Sources */,
 				5072FE6D21F55867004E08C3 /* ListItemPresenter.swift in Sources */,
 				5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */,
+				5072FE8F21F5E083004E08C3 /* AddItemDialog.swift in Sources */,
 				5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */,
 				5072FE7F21F568EF004E08C3 /* UITableView.swift in Sources */,
 				5072FE4A21F54BA3004E08C3 /* AppDelegate.swift in Sources */,
@@ -400,6 +511,7 @@
 		};
 		5072FE5921F54BA4004E08C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82E3D534BD58F68116304F0B /* Pods-AJStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,6 +530,7 @@
 		};
 		5072FE5A21F54BA4004E08C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278FC2B2F8A45A3775554C97 /* Pods-AJStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

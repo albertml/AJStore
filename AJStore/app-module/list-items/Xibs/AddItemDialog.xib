@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddItemDialog" customModule="AJStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="323"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD ITEM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL0-S9-Wie">
+                    <rect key="frame" x="109" y="25" width="79" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6OM-eB-zfV">
+                    <rect key="frame" x="20" y="69" width="257" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WHOLESALE PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Td-TM-KfS">
+                    <rect key="frame" x="20" y="114" width="257" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RETAIL PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLc-Js-WAS">
+                    <rect key="frame" x="20" y="159" width="257" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QTY." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gH-d0-Cfz">
+                    <rect key="frame" x="20" y="204" width="257" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG2-Mv-jBG" customClass="LGButton" customModule="LGButton">
+                    <rect key="frame" x="20" y="256" width="257" height="47"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="xZn-Vn-Bgi"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                            <color key="value" red="0.0" green="0.56470588235294117" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="ADD ITEM"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="ic_add"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnAdd:" destination="iN0-l3-epB" eventType="touchUpInside" id="SeM-h2-2oL"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6Td-TM-KfS" firstAttribute="width" secondItem="6OM-eB-zfV" secondAttribute="width" id="0Xb-6p-A1B"/>
+                <constraint firstItem="bLc-Js-WAS" firstAttribute="top" secondItem="6Td-TM-KfS" secondAttribute="bottom" constant="15" id="3TV-98-XB5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6OM-eB-zfV" secondAttribute="trailing" constant="20" id="47s-6C-LW8"/>
+                <constraint firstItem="lG2-Mv-jBG" firstAttribute="top" secondItem="0gH-d0-Cfz" secondAttribute="bottom" constant="22" id="4VF-IL-c5u"/>
+                <constraint firstItem="6Td-TM-KfS" firstAttribute="top" secondItem="6OM-eB-zfV" secondAttribute="bottom" constant="15" id="5Bd-3H-abK"/>
+                <constraint firstItem="0gH-d0-Cfz" firstAttribute="width" secondItem="bLc-Js-WAS" secondAttribute="width" id="8fb-an-EHN"/>
+                <constraint firstItem="6OM-eB-zfV" firstAttribute="top" secondItem="YL0-S9-Wie" secondAttribute="bottom" constant="23" id="Etl-Y7-hcE"/>
+                <constraint firstItem="lG2-Mv-jBG" firstAttribute="leading" secondItem="0gH-d0-Cfz" secondAttribute="leading" id="Idh-zK-KmT"/>
+                <constraint firstItem="lG2-Mv-jBG" firstAttribute="trailing" secondItem="0gH-d0-Cfz" secondAttribute="trailing" id="LiE-Tc-3rf"/>
+                <constraint firstItem="YL0-S9-Wie" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MWf-IJ-isu"/>
+                <constraint firstItem="YL0-S9-Wie" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="TGF-C3-DdD"/>
+                <constraint firstItem="0gH-d0-Cfz" firstAttribute="top" secondItem="bLc-Js-WAS" secondAttribute="bottom" constant="15" id="Xx9-jK-xK1"/>
+                <constraint firstItem="6OM-eB-zfV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="aX6-iH-rS5"/>
+                <constraint firstItem="bLc-Js-WAS" firstAttribute="leading" secondItem="6Td-TM-KfS" secondAttribute="leading" id="afX-Ov-cMM"/>
+                <constraint firstItem="0gH-d0-Cfz" firstAttribute="leading" secondItem="bLc-Js-WAS" secondAttribute="leading" id="qVJ-GW-Fnr"/>
+                <constraint firstItem="6Td-TM-KfS" firstAttribute="leading" secondItem="6OM-eB-zfV" secondAttribute="leading" id="tGb-6x-kp9"/>
+                <constraint firstItem="bLc-Js-WAS" firstAttribute="width" secondItem="6Td-TM-KfS" secondAttribute="width" id="wNf-Xk-T4h"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="69.599999999999994" y="-0.44977511244377816"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_add" width="180" height="180"/>
+    </resources>
+</document>

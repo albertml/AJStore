@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LGButton
+import PopupKit
 
 class ListItemViewController: UIViewController {
 
@@ -19,7 +21,7 @@ class ListItemViewController: UIViewController {
     
     var presentor: ListItemViewToPresenterProtocol?
     let searchController = UISearchController(searchResultsController: nil)
-    
+    var popUpView: PopupView!
     
     // MARK: VC Life Cycle
     
@@ -48,6 +50,15 @@ class ListItemViewController: UIViewController {
         definesPresentationContext = true
 
     }
+    
+    @IBAction func btnAdd(_ sender: LGButton) {
+        let addItemView: AddItemDialog = UIView.fromNib()
+        addItemView.delegate = self
+        popUpView = PopupView(contentView: addItemView, showType: PopupView.ShowType.bounceInFromTop, dismissType: PopupView.DismissType.fadeOut, maskType: PopupView.MaskType.dimmed, shouldDismissOnBackgroundTouch: false, shouldDismissOnContentTouch: false)
+        popUpView.show()
+    }
+    
+    
 }
 
 extension ListItemViewController: ListItemPresenterToViewProtocol {
@@ -71,22 +82,22 @@ extension ListItemViewController: ListItemPresenterToViewProtocol {
 
 extension ListItemViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let _presenter = presentor {
-            if _presenter.isFiltering() {
-                return _presenter.filteredProductItems.count
+        if let nnpresenter = presentor {
+            if nnpresenter.isFiltering() {
+                return nnpresenter.filteredProductItems.count
             }
-            return _presenter.productItems.count
+            return nnpresenter.productItems.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let _presenter = presentor {
+        if let nnpresenter = presentor {
             let listItemCell: ListItemTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-            if _presenter.isFiltering() {
-                listItemCell.product = _presenter.filteredProductItems[indexPath.row]
+            if nnpresenter.isFiltering() {
+                listItemCell.product = nnpresenter.filteredProductItems[indexPath.row]
             } else {
-               listItemCell.product = _presenter.productItems[indexPath.row]
+               listItemCell.product = nnpresenter.productItems[indexPath.row]
             }
             return listItemCell
         }
@@ -120,8 +131,8 @@ extension ListItemViewController: UISearchResultsUpdating {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        if let _presenter = presentor {
-            _presenter.filteredProductItems = _presenter.productItems.filter({( product : ProductItem) -> Bool in
+        if let nnpresenter = presentor {
+            nnpresenter.filteredProductItems = nnpresenter.productItems.filter({( product : ProductItem) -> Bool in
                 return product.name.lowercased().contains(searchText.lowercased())
             })
             
@@ -134,5 +145,11 @@ extension ListItemViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
 
+    }
+}
+
+extension ListItemViewController: AddItemProtocol {
+    func didAddItem() {
+        popUpView.dismissPresentingPopup()
     }
 }

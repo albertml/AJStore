@@ -26,12 +26,41 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="hyz-yb-Zyw"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bl3-fK-HzE" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="hDl-fI-RRj"/>
+                                    <constraint firstAttribute="height" constant="60" id="u2q-q1-L59"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.0" green="0.56470588235294117" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showTouchFeedback" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="ic_add"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12264554794520548" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3j-5l-0fG"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bl3-fK-HzE" secondAttribute="bottom" constant="20" id="BOl-le-IeE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lyH-wo-KrB" secondAttribute="trailing" id="J25-ZH-gxv"/>
                             <constraint firstItem="lyH-wo-KrB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MLe-8B-qDd"/>
                             <constraint firstItem="lyH-wo-KrB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uow-KX-0Ym"/>
+                            <constraint firstItem="bl3-fK-HzE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="YVL-JM-iBn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lyH-wo-KrB" secondAttribute="bottom" id="l83-iw-mu2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -44,4 +73,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_add" width="180" height="180"/>
+    </resources>
 </document>

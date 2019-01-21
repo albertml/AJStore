@@ -1,0 +1,34 @@
+PODS:
+  - IQKeyboardManagerSwift (6.2.0)
+  - LGButton (1.1.2)
+  - PopupKit (3.1.1)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - LGButton
+  - PopupKit
+  - RealmSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IQKeyboardManagerSwift
+    - LGButton
+    - PopupKit
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  LGButton: 0e07c243d1655b507502c3b9271d3c3a7c22dcaa
+  PopupKit: e362ed92148d831a9c38a2bc7a25893e46d64c54
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+
+PODFILE CHECKSUM: f74c9ea6b93bcf6455e7189fbbaa7c620500c133
+
+COCOAPODS: 1.5.3

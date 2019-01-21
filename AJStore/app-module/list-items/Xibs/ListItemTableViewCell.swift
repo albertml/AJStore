@@ -20,10 +20,10 @@ class ListItemTableViewCell: UITableViewCell {
     
     var product: ProductItem? {
         didSet {
-            if let _product = product {
-                lblName.text = _product.name
-                lblPrice.text = "W: \(_product.wholeSalePrice)\nR: \(_product.retailPrice)"
-                lblQuantity.text = "\(_product.quantity)"
+            if let nnproduct = product {
+                lblName.text = nnproduct.name
+                lblPrice.text = "W: \(nnproduct.wholeSalePrice)\nR: \(nnproduct.retailPrice)"
+                lblQuantity.text = "\(nnproduct.quantity)"
             }
         }
     }
