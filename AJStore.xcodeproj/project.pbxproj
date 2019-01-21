@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		5072FE4A21F54BA3004E08C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE4921F54BA3004E08C3 /* AppDelegate.swift */; };
-		5072FE4C21F54BA3004E08C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE4B21F54BA3004E08C3 /* ViewController.swift */; };
-		5072FE4F21F54BA3004E08C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE4D21F54BA3004E08C3 /* Main.storyboard */; };
+		5072FE4F21F54BA3004E08C3 /* ListItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE4D21F54BA3004E08C3 /* ListItem.storyboard */; };
 		5072FE5121F54BA4004E08C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE5021F54BA4004E08C3 /* Assets.xcassets */; };
 		5072FE5421F54BA4004E08C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE5221F54BA4004E08C3 /* LaunchScreen.storyboard */; };
+		5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE6621F55831004E08C3 /* ListItemViewController.swift */; };
+		5072FE6921F55845004E08C3 /* ListItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE6821F55845004E08C3 /* ListItemEntity.swift */; };
+		5072FE6B21F55856004E08C3 /* ListItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE6A21F55856004E08C3 /* ListItemInteractor.swift */; };
+		5072FE6D21F55867004E08C3 /* ListItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE6C21F55867004E08C3 /* ListItemPresenter.swift */; };
+		5072FE6F21F5587C004E08C3 /* ListItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE6E21F5587C004E08C3 /* ListItemProtocol.swift */; };
+		5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE7021F5588D004E08C3 /* ListItemRouter.swift */; };
+		5072FE7521F559BF004E08C3 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE7421F559BF004E08C3 /* AppStoryboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5072FE4621F54BA3004E08C3 /* AJStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AJStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5072FE4921F54BA3004E08C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5072FE4B21F54BA3004E08C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5072FE4E21F54BA3004E08C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5072FE4E21F54BA3004E08C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ListItem.storyboard; sourceTree = "<group>"; };
 		5072FE5021F54BA4004E08C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5072FE5321F54BA4004E08C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5072FE5521F54BA4004E08C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5072FE6621F55831004E08C3 /* ListItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemViewController.swift; sourceTree = "<group>"; };
+		5072FE6821F55845004E08C3 /* ListItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemEntity.swift; sourceTree = "<group>"; };
+		5072FE6A21F55856004E08C3 /* ListItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemInteractor.swift; sourceTree = "<group>"; };
+		5072FE6C21F55867004E08C3 /* ListItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemPresenter.swift; sourceTree = "<group>"; };
+		5072FE6E21F5587C004E08C3 /* ListItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemProtocol.swift; sourceTree = "<group>"; };
+		5072FE7021F5588D004E08C3 /* ListItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRouter.swift; sourceTree = "<group>"; };
+		5072FE7421F559BF004E08C3 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,94 +66,68 @@
 		5072FE4821F54BA3004E08C3 /* AJStore */ = {
 			isa = PBXGroup;
 			children = (
-				5072FE5C21F555D2004E08C3 /* AppDelegate */,
-				5072FE5B21F555C2004E08C3 /* Features */,
-				5072FE4B21F54BA3004E08C3 /* ViewController.swift */,
-				5072FE4D21F54BA3004E08C3 /* Main.storyboard */,
+				5072FE5C21F555D2004E08C3 /* app-settings */,
+				5072FE7221F55981004E08C3 /* common-utils */,
+				5072FE5B21F555C2004E08C3 /* app-module */,
 				5072FE5021F54BA4004E08C3 /* Assets.xcassets */,
 				5072FE5221F54BA4004E08C3 /* LaunchScreen.storyboard */,
-				5072FE5521F54BA4004E08C3 /* Info.plist */,
 			);
 			path = AJStore;
 			sourceTree = "<group>";
 		};
-		5072FE5B21F555C2004E08C3 /* Features */ = {
+		5072FE5B21F555C2004E08C3 /* app-module */ = {
 			isa = PBXGroup;
 			children = (
-				5072FE5F21F555F4004E08C3 /* AddItem */,
-				5072FE5D21F555E2004E08C3 /* ListItems */,
+				5072FE5F21F555F4004E08C3 /* add-item */,
+				5072FE5D21F555E2004E08C3 /* list-items */,
 			);
-			path = Features;
+			path = "app-module";
 			sourceTree = "<group>";
 		};
-		5072FE5C21F555D2004E08C3 /* AppDelegate */ = {
+		5072FE5C21F555D2004E08C3 /* app-settings */ = {
 			isa = PBXGroup;
 			children = (
+				5072FE5521F54BA4004E08C3 /* Info.plist */,
 				5072FE4921F54BA3004E08C3 /* AppDelegate.swift */,
 			);
-			path = AppDelegate;
+			path = "app-settings";
 			sourceTree = "<group>";
 		};
-		5072FE5D21F555E2004E08C3 /* ListItems */ = {
+		5072FE5D21F555E2004E08C3 /* list-items */ = {
 			isa = PBXGroup;
 			children = (
-				5072FE6521F55649004E08C3 /* Protocol */,
-				5072FE6021F55607004E08C3 /* Views */,
-				5072FE6221F55626004E08C3 /* Presenter */,
-				5072FE6121F5561D004E08C3 /* Interactor */,
-				5072FE6421F55639004E08C3 /* Router */,
-				5072FE6321F55630004E08C3 /* Entity */,
+				5072FE6621F55831004E08C3 /* ListItemViewController.swift */,
+				5072FE6821F55845004E08C3 /* ListItemEntity.swift */,
+				5072FE6A21F55856004E08C3 /* ListItemInteractor.swift */,
+				5072FE6C21F55867004E08C3 /* ListItemPresenter.swift */,
+				5072FE6E21F5587C004E08C3 /* ListItemProtocol.swift */,
+				5072FE7021F5588D004E08C3 /* ListItemRouter.swift */,
+				5072FE4D21F54BA3004E08C3 /* ListItem.storyboard */,
 			);
-			path = ListItems;
+			path = "list-items";
 			sourceTree = "<group>";
 		};
-		5072FE5F21F555F4004E08C3 /* AddItem */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AddItem;
-			sourceTree = "<group>";
-		};
-		5072FE6021F55607004E08C3 /* Views */ = {
+		5072FE5F21F555F4004E08C3 /* add-item */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = "add-item";
 			sourceTree = "<group>";
 		};
-		5072FE6121F5561D004E08C3 /* Interactor */ = {
+		5072FE7221F55981004E08C3 /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				5072FE7321F559A3004E08C3 /* Extentions */,
 			);
-			path = Interactor;
+			path = "common-utils";
 			sourceTree = "<group>";
 		};
-		5072FE6221F55626004E08C3 /* Presenter */ = {
+		5072FE7321F559A3004E08C3 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				5072FE7421F559BF004E08C3 /* AppStoryboard.swift */,
 			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		5072FE6321F55630004E08C3 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		5072FE6421F55639004E08C3 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		5072FE6521F55649004E08C3 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +190,7 @@
 			files = (
 				5072FE5421F54BA4004E08C3 /* LaunchScreen.storyboard in Resources */,
 				5072FE5121F54BA4004E08C3 /* Assets.xcassets in Resources */,
-				5072FE4F21F54BA3004E08C3 /* Main.storyboard in Resources */,
+				5072FE4F21F54BA3004E08C3 /* ListItem.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,20 +201,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5072FE4C21F54BA3004E08C3 /* ViewController.swift in Sources */,
+				5072FE7521F559BF004E08C3 /* AppStoryboard.swift in Sources */,
+				5072FE6B21F55856004E08C3 /* ListItemInteractor.swift in Sources */,
+				5072FE6D21F55867004E08C3 /* ListItemPresenter.swift in Sources */,
+				5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */,
+				5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */,
 				5072FE4A21F54BA3004E08C3 /* AppDelegate.swift in Sources */,
+				5072FE6F21F5587C004E08C3 /* ListItemProtocol.swift in Sources */,
+				5072FE6921F55845004E08C3 /* ListItemEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5072FE4D21F54BA3004E08C3 /* Main.storyboard */ = {
+		5072FE4D21F54BA3004E08C3 /* ListItem.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5072FE4E21F54BA3004E08C3 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ListItem.storyboard;
 			sourceTree = "<group>";
 		};
 		5072FE5221F54BA4004E08C3 /* LaunchScreen.storyboard */ = {
@@ -364,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UJUHDYDHF;
-				INFOPLIST_FILE = AJStore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AJStore/app-settings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UJUHDYDHF;
-				INFOPLIST_FILE = AJStore/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AJStore/app-settings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
