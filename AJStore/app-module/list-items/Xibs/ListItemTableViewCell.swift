@@ -18,7 +18,7 @@ class ListItemTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    var product: ProductItem? {
+    var product: ProductItemInDB? {
         didSet {
             if let nnproduct = product {
                 lblName.text = nnproduct.name

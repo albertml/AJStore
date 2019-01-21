@@ -13,28 +13,16 @@ class ListItemPresenter: ListItemViewToPresenterProtocol {
     var router: ListItemPresenterToRouterProtocol?
     var view: ListItemViewController!
     var interactor: ListItemPresenterToInteractorProtocol!
-    var productItems: [ProductItem] = []
-    var filteredProductItems: [ProductItem] = []
+    var productItems: [ProductItemInDB] = []
+    var filteredProductItems: [ProductItemInDB] = []
+    private var realmManager = RealmManager()
     
     func setTitle() {
         view.setTitle(pageTitle: "A&J Store")
     }
     
-    func fetchUser() {
-        
-    }
-    
-    func goToProfileDetail() {
-        
-    }
-    
     func getItem() {
-        let item: [ProductItem] = [
-            ProductItem(name: "Kopiko Blanca Twin", wholeSalePrice: 120.00, retailPrice: 10.00, quantity: 12),
-            ProductItem(name: "Kopiko Blanca Single", wholeSalePrice: 84.00, retailPrice: 10.00, quantity: 12)
-        ]
-        
-        self.productItems = item
+        self.productItems = realmManager.getAllItems().sorted { $0.name > $1.name }
         view.getAllProduct()
     }
     
@@ -42,6 +30,9 @@ class ListItemPresenter: ListItemViewToPresenterProtocol {
         return view.searchController.isActive && !view.searchController.searchBar.text!.isEmpty
     }
 
+    func deleteItem(item: ProductItemInDB) {
+        realmManager.deleteItem(product: item)
+    }
 }
 
 extension ListItemPresenter: ListItemInteractorToPresenterProtocol {

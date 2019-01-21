@@ -27,6 +27,9 @@
 		5072FE8D21F5DD7E004E08C3 /* AddItemDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */; };
 		5072FE8F21F5E083004E08C3 /* AddItemDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */; };
 		5072FE9121F5E0CA004E08C3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9021F5E0CA004E08C3 /* UIView+Extensions.swift */; };
+		5072FE9421F60832004E08C3 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9321F60832004E08C3 /* AlertPresenter.swift */; };
+		5072FE9721F60EA1004E08C3 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9621F60EA1004E08C3 /* RealmManager.swift */; };
+		5072FE9921F61CF5004E08C3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9821F61CF5004E08C3 /* UIColor+Extensions.swift */; };
 		AA0F95601FFE99A9BA0E7C4A /* Pods_AJStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemDialog.xib; sourceTree = "<group>"; };
 		5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDialog.swift; sourceTree = "<group>"; };
 		5072FE9021F5E0CA004E08C3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		5072FE9321F60832004E08C3 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		5072FE9621F60EA1004E08C3 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		5072FE9821F61CF5004E08C3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AJStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E3D534BD58F68116304F0B /* Pods-AJStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AJStore/Pods-AJStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +158,8 @@
 		5072FE7221F55981004E08C3 /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				5072FE9521F60E8F004E08C3 /* Manager */,
+				5072FE9221F6081E004E08C3 /* Helper */,
 				5072FE8421F56A0C004E08C3 /* Constants */,
 				5072FE7321F559A3004E08C3 /* Extentions */,
 			);
@@ -165,6 +173,7 @@
 				5072FE7E21F568EF004E08C3 /* UITableView.swift */,
 				5072FE8021F56913004E08C3 /* ReusableView.swift */,
 				5072FE9021F5E0CA004E08C3 /* UIView+Extensions.swift */,
+				5072FE9821F61CF5004E08C3 /* UIColor+Extensions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -195,6 +204,22 @@
 				5072FE8521F56A1D004E08C3 /* Contants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		5072FE9221F6081E004E08C3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE9321F60832004E08C3 /* AlertPresenter.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		5072FE9521F60E8F004E08C3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE9621F60EA1004E08C3 /* RealmManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		8852D1D00821C87267749445 /* Frameworks */ = {
@@ -359,14 +384,17 @@
 				5072FE8121F56913004E08C3 /* ReusableView.swift in Sources */,
 				5072FE6B21F55856004E08C3 /* ListItemInteractor.swift in Sources */,
 				5072FE6D21F55867004E08C3 /* ListItemPresenter.swift in Sources */,
+				5072FE9421F60832004E08C3 /* AlertPresenter.swift in Sources */,
 				5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */,
 				5072FE8F21F5E083004E08C3 /* AddItemDialog.swift in Sources */,
 				5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */,
+				5072FE9721F60EA1004E08C3 /* RealmManager.swift in Sources */,
 				5072FE7F21F568EF004E08C3 /* UITableView.swift in Sources */,
 				5072FE4A21F54BA3004E08C3 /* AppDelegate.swift in Sources */,
 				5072FE6F21F5587C004E08C3 /* ListItemProtocol.swift in Sources */,
 				5072FE8321F56979004E08C3 /* ListItemTableViewCell.swift in Sources */,
 				5072FE6921F55845004E08C3 /* ListItemEntity.swift in Sources */,
+				5072FE9921F61CF5004E08C3 /* UIColor+Extensions.swift in Sources */,
 				5072FE8621F56A1D004E08C3 /* Contants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

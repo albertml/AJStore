@@ -26,25 +26,25 @@
                     <rect key="frame" x="20" y="69" width="257" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" textContentType="name"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WHOLESALE PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Td-TM-KfS">
                     <rect key="frame" x="20" y="114" width="257" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RETAIL PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLc-Js-WAS">
                     <rect key="frame" x="20" y="159" width="257" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QTY." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gH-d0-Cfz">
                     <rect key="frame" x="20" y="204" width="257" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG2-Mv-jBG" customClass="LGButton" customModule="LGButton">
                     <rect key="frame" x="20" y="256" width="257" height="47"/>
@@ -89,6 +89,12 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="tfName" destination="6OM-eB-zfV" id="R7f-sb-l2u"/>
+                <outlet property="tfQuantity" destination="0gH-d0-Cfz" id="gW9-gM-mxH"/>
+                <outlet property="tfRetailPrice" destination="bLc-Js-WAS" id="5xo-RH-2yd"/>
+                <outlet property="tfWholeSalePrice" destination="6Td-TM-KfS" id="7gd-AS-2OM"/>
+            </connections>
             <point key="canvasLocation" x="69.599999999999994" y="-0.44977511244377816"/>
         </view>
     </objects>
