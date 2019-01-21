@@ -54,7 +54,8 @@
 		5072FE4821F54BA3004E08C3 /* AJStore */ = {
 			isa = PBXGroup;
 			children = (
-				5072FE4921F54BA3004E08C3 /* AppDelegate.swift */,
+				5072FE5C21F555D2004E08C3 /* AppDelegate */,
+				5072FE5B21F555C2004E08C3 /* Features */,
 				5072FE4B21F54BA3004E08C3 /* ViewController.swift */,
 				5072FE4D21F54BA3004E08C3 /* Main.storyboard */,
 				5072FE5021F54BA4004E08C3 /* Assets.xcassets */,
@@ -62,6 +63,85 @@
 				5072FE5521F54BA4004E08C3 /* Info.plist */,
 			);
 			path = AJStore;
+			sourceTree = "<group>";
+		};
+		5072FE5B21F555C2004E08C3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE5F21F555F4004E08C3 /* AddItem */,
+				5072FE5D21F555E2004E08C3 /* ListItems */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5072FE5C21F555D2004E08C3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE4921F54BA3004E08C3 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5072FE5D21F555E2004E08C3 /* ListItems */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE6521F55649004E08C3 /* Protocol */,
+				5072FE6021F55607004E08C3 /* Views */,
+				5072FE6221F55626004E08C3 /* Presenter */,
+				5072FE6121F5561D004E08C3 /* Interactor */,
+				5072FE6421F55639004E08C3 /* Router */,
+				5072FE6321F55630004E08C3 /* Entity */,
+			);
+			path = ListItems;
+			sourceTree = "<group>";
+		};
+		5072FE5F21F555F4004E08C3 /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddItem;
+			sourceTree = "<group>";
+		};
+		5072FE6021F55607004E08C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5072FE6121F5561D004E08C3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5072FE6221F55626004E08C3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5072FE6321F55630004E08C3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5072FE6421F55639004E08C3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5072FE6521F55649004E08C3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
