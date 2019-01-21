@@ -18,6 +18,12 @@
 		5072FE6F21F5587C004E08C3 /* ListItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE6E21F5587C004E08C3 /* ListItemProtocol.swift */; };
 		5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE7021F5588D004E08C3 /* ListItemRouter.swift */; };
 		5072FE7521F559BF004E08C3 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE7421F559BF004E08C3 /* AppStoryboard.swift */; };
+		5072FE7921F5665A004E08C3 /* ListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE7821F5665A004E08C3 /* ListItemTableViewCell.xib */; };
+		5072FE7B21F567B7004E08C3 /* ListItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5072FE7A21F567B7004E08C3 /* ListItemHeader.xib */; };
+		5072FE7F21F568EF004E08C3 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE7E21F568EF004E08C3 /* UITableView.swift */; };
+		5072FE8121F56913004E08C3 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8021F56913004E08C3 /* ReusableView.swift */; };
+		5072FE8321F56979004E08C3 /* ListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */; };
+		5072FE8621F56A1D004E08C3 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE8521F56A1D004E08C3 /* Contants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		5072FE6E21F5587C004E08C3 /* ListItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemProtocol.swift; sourceTree = "<group>"; };
 		5072FE7021F5588D004E08C3 /* ListItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRouter.swift; sourceTree = "<group>"; };
 		5072FE7421F559BF004E08C3 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		5072FE7821F5665A004E08C3 /* ListItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemTableViewCell.xib; sourceTree = "<group>"; };
+		5072FE7A21F567B7004E08C3 /* ListItemHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemHeader.xib; sourceTree = "<group>"; };
+		5072FE7E21F568EF004E08C3 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		5072FE8021F56913004E08C3 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemTableViewCell.swift; sourceTree = "<group>"; };
+		5072FE8521F56A1D004E08C3 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +114,8 @@
 				5072FE6C21F55867004E08C3 /* ListItemPresenter.swift */,
 				5072FE6E21F5587C004E08C3 /* ListItemProtocol.swift */,
 				5072FE7021F5588D004E08C3 /* ListItemRouter.swift */,
-				5072FE4D21F54BA3004E08C3 /* ListItem.storyboard */,
+				5072FE7621F55B4C004E08C3 /* StoryBoard */,
+				5072FE7721F55B76004E08C3 /* Xibs */,
 			);
 			path = "list-items";
 			sourceTree = "<group>";
@@ -117,6 +130,7 @@
 		5072FE7221F55981004E08C3 /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				5072FE8421F56A0C004E08C3 /* Constants */,
 				5072FE7321F559A3004E08C3 /* Extentions */,
 			);
 			path = "common-utils";
@@ -126,8 +140,36 @@
 			isa = PBXGroup;
 			children = (
 				5072FE7421F559BF004E08C3 /* AppStoryboard.swift */,
+				5072FE7E21F568EF004E08C3 /* UITableView.swift */,
+				5072FE8021F56913004E08C3 /* ReusableView.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		5072FE7621F55B4C004E08C3 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE4D21F54BA3004E08C3 /* ListItem.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		5072FE7721F55B76004E08C3 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE7821F5665A004E08C3 /* ListItemTableViewCell.xib */,
+				5072FE7A21F567B7004E08C3 /* ListItemHeader.xib */,
+				5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		5072FE8421F56A0C004E08C3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE8521F56A1D004E08C3 /* Contants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +230,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5072FE7921F5665A004E08C3 /* ListItemTableViewCell.xib in Resources */,
 				5072FE5421F54BA4004E08C3 /* LaunchScreen.storyboard in Resources */,
 				5072FE5121F54BA4004E08C3 /* Assets.xcassets in Resources */,
+				5072FE7B21F567B7004E08C3 /* ListItemHeader.xib in Resources */,
 				5072FE4F21F54BA3004E08C3 /* ListItem.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,13 +246,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5072FE7521F559BF004E08C3 /* AppStoryboard.swift in Sources */,
+				5072FE8121F56913004E08C3 /* ReusableView.swift in Sources */,
 				5072FE6B21F55856004E08C3 /* ListItemInteractor.swift in Sources */,
 				5072FE6D21F55867004E08C3 /* ListItemPresenter.swift in Sources */,
 				5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */,
 				5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */,
+				5072FE7F21F568EF004E08C3 /* UITableView.swift in Sources */,
 				5072FE4A21F54BA3004E08C3 /* AppDelegate.swift in Sources */,
 				5072FE6F21F5587C004E08C3 /* ListItemProtocol.swift in Sources */,
+				5072FE8321F56979004E08C3 /* ListItemTableViewCell.swift in Sources */,
 				5072FE6921F55845004E08C3 /* ListItemEntity.swift in Sources */,
+				5072FE8621F56A1D004E08C3 /* Contants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

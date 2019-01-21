@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct ProductItem {
+    let name: String
+    let wholeSalePrice: Double
+    let retailPrice: Double
+    let quantity: Int
+}

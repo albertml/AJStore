@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListItemHeader" rowHeight="50" id="Hul-k2-BUk">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hul-k2-BUk" id="ODM-71-dWg">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofR-Dj-G1O">
+                        <rect key="frame" x="11" y="21.5" width="131.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20d-gI-IOd">
+                        <rect key="frame" x="147.5" y="21.5" width="131" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyl-nE-2Qj">
+                        <rect key="frame" x="283.5" y="21.5" width="85.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="20d-gI-IOd" firstAttribute="leading" secondItem="ofR-Dj-G1O" secondAttribute="trailing" constant="5" id="7H4-dC-8bG"/>
+                    <constraint firstItem="Yyl-nE-2Qj" firstAttribute="trailing" secondItem="ODM-71-dWg" secondAttribute="trailingMargin" constant="10" id="Bd9-fm-5ux"/>
+                    <constraint firstItem="ofR-Dj-G1O" firstAttribute="width" secondItem="ODM-71-dWg" secondAttribute="width" multiplier="0.35" id="Ctr-fv-MpZ"/>
+                    <constraint firstItem="Yyl-nE-2Qj" firstAttribute="centerY" secondItem="20d-gI-IOd" secondAttribute="centerY" id="FIy-Pj-5FW"/>
+                    <constraint firstItem="Yyl-nE-2Qj" firstAttribute="leading" secondItem="20d-gI-IOd" secondAttribute="trailing" constant="5" id="G7l-fm-4s6"/>
+                    <constraint firstItem="20d-gI-IOd" firstAttribute="width" secondItem="ofR-Dj-G1O" secondAttribute="width" id="IgC-ct-1cp"/>
+                    <constraint firstItem="20d-gI-IOd" firstAttribute="centerY" secondItem="ofR-Dj-G1O" secondAttribute="centerY" id="XPh-Jp-H8f"/>
+                    <constraint firstItem="ofR-Dj-G1O" firstAttribute="centerY" secondItem="ODM-71-dWg" secondAttribute="centerY" id="e00-MJ-mTb"/>
+                    <constraint firstItem="ofR-Dj-G1O" firstAttribute="leading" secondItem="ODM-71-dWg" secondAttribute="leadingMargin" constant="-5" id="kns-3G-Ea6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="37.600000000000001" y="-143.02848575712144"/>
+        </tableViewCell>
+    </objects>
+</document>

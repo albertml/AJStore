@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class ListItemInteractor: ListItemPresenterToInteractorProtocol {
+    var presenter: ListItemInteractorToPresenterProtocol?
+    
+    func fetchRandomUser() {
+        
+    } 
+}
