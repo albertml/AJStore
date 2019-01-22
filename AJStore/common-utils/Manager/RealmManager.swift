@@ -19,13 +19,13 @@ struct RealmManager {
         }
     }
     
-    func getAllItems() -> [ProductItemInDB] {
-        let items = realm.objects(ProductItemInDB.self)
+    func getAllItems() -> [ProductItem] {
+        let items = realm.objects(ProductItem.self)
         return Array(items)
     }
     
-    func deleteItem(product: ProductItemInDB) {
-        let queryItem = realm.objects(ProductItemInDB.self).filter("id == \(product.id)").first
+    func deleteItem(product: ProductItem) {
+        let queryItem = realm.objects(ProductItem.self).filter("id == \(product.id)").first
         guard let nnproductItem = queryItem else {
             return
         }

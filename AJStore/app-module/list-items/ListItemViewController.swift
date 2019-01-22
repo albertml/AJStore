@@ -167,7 +167,7 @@ extension ListItemViewController: UISearchResultsUpdating {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         if let nnpresenter = presentor {
-            nnpresenter.filteredProductItems = nnpresenter.productItems.filter({( product : ProductItemInDB) -> Bool in
+            nnpresenter.filteredProductItems = nnpresenter.productItems.filter({( product : ProductItem) -> Bool in
                 return product.name.lowercased().contains(searchText.lowercased())
             })
             tblListItems.reloadData()

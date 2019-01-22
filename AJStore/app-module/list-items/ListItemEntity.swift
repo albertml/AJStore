@@ -9,15 +9,15 @@
 import Foundation
 import RealmSwift
 
-struct ProductItem {
+/*struct ProductItem {
     let name: String
     let wholeSalePrice: Double
     let retailPrice: Double
     let quantity: Int
-}
+}*/
 
 
-class ProductItemInDB: Object {
+class ProductItem: Object {
     @objc dynamic var id = 0
     @objc dynamic var name: String = ""
     @objc dynamic var wholeSalePrice: Double = 0.0
@@ -36,16 +36,16 @@ struct ProductItems {
     
     init() {}
     
-    init(item: ProductItem) {
+    init(name: String, wholeSalePrice: Double, retailPrice: Double, qty: Int) {
         let id = generateRandomId()
-        let queryPackage = realm.objects(ProductItemInDB.self).filter("id == \(id)").first
+        let queryPackage = realm.objects(ProductItem.self).filter("id == \(id)").first
         
-        let productItem = ProductItemInDB()
+        let productItem = ProductItem()
         productItem.id = id
-        productItem.name = item.name
-        productItem.wholeSalePrice = item.wholeSalePrice
-        productItem.retailPrice = item.retailPrice
-        productItem.quantity = item.quantity
+        productItem.name = name
+        productItem.wholeSalePrice = wholeSalePrice
+        productItem.retailPrice = retailPrice
+        productItem.quantity = qty
         
         if let _ = queryPackage {
             realmManager.saveDataToRealm(object: productItem)

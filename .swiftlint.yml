@@ -16,3 +16,4 @@ disabled_rules: # rule identifiers to exclude from running
   - force_try
   - void_return
   - unused_closure_parameter
+  - unused_optional_binding

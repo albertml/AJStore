@@ -10,8 +10,14 @@ import Foundation
 
 class ListItemInteractor: ListItemPresenterToInteractorProtocol {
     var presenter: ListItemInteractorToPresenterProtocol?
+    private var realmManager = RealmManager()
     
-    func fetchRandomUser() {
-        
-    } 
+    func getItem() {
+        let items = realmManager.getAllItems().sorted { $0.name > $1.name }
+        presenter?.successGettingItem(items: items)
+    }
+    
+    func deleteItem(item: ProductItem) {
+        realmManager.deleteItem(product: item)
+    }
 }

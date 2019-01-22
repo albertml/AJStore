@@ -18,11 +18,11 @@ class ListItemTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
-    var product: ProductItemInDB? {
+    var product: ProductItem? {
         didSet {
             if let nnproduct = product {
                 lblName.text = nnproduct.name
-                lblPrice.text = "W: \(nnproduct.wholeSalePrice)\nR: \(nnproduct.retailPrice)"
+                lblPrice.text = "W: \(String(format: "%.2f", nnproduct.wholeSalePrice))\nR: \(String(format: "%.2f", nnproduct.retailPrice))"
                 lblQuantity.text = "\(nnproduct.quantity)"
             }
         }

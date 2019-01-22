@@ -13,36 +13,29 @@ class ListItemPresenter: ListItemViewToPresenterProtocol {
     var router: ListItemPresenterToRouterProtocol?
     var view: ListItemViewController!
     var interactor: ListItemPresenterToInteractorProtocol!
-    var productItems: [ProductItemInDB] = []
-    var filteredProductItems: [ProductItemInDB] = []
-    private var realmManager = RealmManager()
+    var productItems: [ProductItem] = []
+    var filteredProductItems: [ProductItem] = []
     
     func setTitle() {
         view.setTitle(pageTitle: "A&J Store")
     }
     
     func getItem() {
-        self.productItems = realmManager.getAllItems().sorted { $0.name > $1.name }
-        view.getAllProduct()
+        interactor.getItem()
     }
     
     func isFiltering() -> Bool {
         return view.searchController.isActive && !view.searchController.searchBar.text!.isEmpty
     }
 
-    func deleteItem(item: ProductItemInDB) {
-        realmManager.deleteItem(product: item)
+    func deleteItem(item: ProductItem) {
+        interactor.deleteItem(item: item)
     }
 }
 
 extension ListItemPresenter: ListItemInteractorToPresenterProtocol {
-    func successFetchUser(user: String) {
-        //
+    func successGettingItem(items: [ProductItem]) {
+        productItems = items
+        view.getAllProduct()
     }
-    
-    func failedToFetchUser(errorMsg: String) {
-        //
-    }
-    
-    
 }
