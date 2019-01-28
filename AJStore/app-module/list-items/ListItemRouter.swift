@@ -28,10 +28,11 @@ class ListItemRouter: ListItemPresenterToRouterProtocol {
         return listItemVC
     }
     
-    func pushToProfileDetailScreen(viewController: ListItemViewController, user: String) {
-//        var profileDetailModule = ProfileDetailViewController.instantiate(fromAppStoryboard: .Main)
-//        profileDetailModule = ProfileDetailRouter.createProfileDetailModule(user: user)
-//        viewController.navigationController?.pushViewController(profileDetailModule,animated: true)
+    func pushToEditItemScreen(viewController: ListItemViewController, item: ProductItem) {
+        var editItemModule = EditItemViewController.instantiate(fromAppStoryboard: .EditItem)
+        editItemModule.delegate = viewController as? EditItemUpdatedProtocol
+        editItemModule = EditItemRouter.createEditItemModule(item: item)
+        viewController.navigationController?.pushViewController(editItemModule,animated: true)
     }
     
 }

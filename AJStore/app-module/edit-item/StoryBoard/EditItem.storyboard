@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Item View Controller-->
+        <scene sceneID="X6P-4B-XY2">
+            <objects>
+                <viewController storyboardIdentifier="EditItemViewControllerID" id="bye-e9-vGA" customClass="EditItemViewController" customModule="AJStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="teG-tF-A9J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H45-tQ-yxs">
+                                <rect key="frame" x="50" y="83" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WHOLESALE PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd1-dJ-hgH">
+                                <rect key="frame" x="50" y="128" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RETAIL PRICE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91V-Er-qI5">
+                                <rect key="frame" x="50" y="173" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="QTY." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rW9-1l-tk0">
+                                <rect key="frame" x="50" y="218" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgI-Rw-9CV" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="50" y="270" width="275" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="yEa-wN-NMj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                        <color key="value" red="0.0" green="0.56470588239999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="UPDATE ITEM"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="ic_edit"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnEditItem:" destination="bye-e9-vGA" eventType="touchUpInside" id="oKD-5H-v4S"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rW9-1l-tk0" firstAttribute="width" secondItem="91V-Er-qI5" secondAttribute="width" id="3md-f8-iV0"/>
+                            <constraint firstItem="91V-Er-qI5" firstAttribute="top" secondItem="fd1-dJ-hgH" secondAttribute="bottom" constant="15" id="4PX-3p-465"/>
+                            <constraint firstItem="H45-tQ-yxs" firstAttribute="leading" secondItem="62a-ds-Wma" secondAttribute="leading" constant="50" id="950-bR-J8k"/>
+                            <constraint firstItem="fd1-dJ-hgH" firstAttribute="leading" secondItem="H45-tQ-yxs" secondAttribute="leading" id="G8Z-ZQ-vZV"/>
+                            <constraint firstItem="fd1-dJ-hgH" firstAttribute="top" secondItem="H45-tQ-yxs" secondAttribute="bottom" constant="15" id="QLn-E1-2w4"/>
+                            <constraint firstItem="pgI-Rw-9CV" firstAttribute="top" secondItem="rW9-1l-tk0" secondAttribute="bottom" constant="22" id="RkF-Xn-HLE"/>
+                            <constraint firstItem="91V-Er-qI5" firstAttribute="width" secondItem="fd1-dJ-hgH" secondAttribute="width" id="amq-3k-gQu"/>
+                            <constraint firstItem="rW9-1l-tk0" firstAttribute="top" secondItem="91V-Er-qI5" secondAttribute="bottom" constant="15" id="krI-LE-aYC"/>
+                            <constraint firstItem="pgI-Rw-9CV" firstAttribute="leading" secondItem="rW9-1l-tk0" secondAttribute="leading" id="nNP-SH-KsW"/>
+                            <constraint firstItem="62a-ds-Wma" firstAttribute="trailing" secondItem="H45-tQ-yxs" secondAttribute="trailing" constant="50" id="rk5-IN-sBJ"/>
+                            <constraint firstItem="91V-Er-qI5" firstAttribute="leading" secondItem="fd1-dJ-hgH" secondAttribute="leading" id="sVr-9H-uRy"/>
+                            <constraint firstItem="rW9-1l-tk0" firstAttribute="leading" secondItem="91V-Er-qI5" secondAttribute="leading" id="tsL-0z-JoA"/>
+                            <constraint firstItem="fd1-dJ-hgH" firstAttribute="width" secondItem="H45-tQ-yxs" secondAttribute="width" id="xHY-m9-FmI"/>
+                            <constraint firstItem="H45-tQ-yxs" firstAttribute="top" secondItem="62a-ds-Wma" secondAttribute="top" constant="63" id="yGX-iw-fL7"/>
+                            <constraint firstItem="pgI-Rw-9CV" firstAttribute="trailing" secondItem="rW9-1l-tk0" secondAttribute="trailing" id="ynX-b7-Bzs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="62a-ds-Wma"/>
+                    </view>
+                    <connections>
+                        <outlet property="tfName" destination="H45-tQ-yxs" id="Aaq-mA-g5E"/>
+                        <outlet property="tfQuantity" destination="rW9-1l-tk0" id="e2K-8i-aMc"/>
+                        <outlet property="tfRetailPrice" destination="91V-Er-qI5" id="Akr-Ye-DAs"/>
+                        <outlet property="tfWholesalePrice" destination="fd1-dJ-hgH" id="RVq-jE-gIG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dM-z3-utM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434" y="-26"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_edit" width="181.89472961425781" height="181.89472961425781"/>
+    </resources>
+</document>

@@ -33,4 +33,17 @@ struct RealmManager {
             realm.delete(nnproductItem)
         }
     }
+    
+    func updateItem(product: ProductItem) {
+        let queryItem = realm.objects(ProductItem.self).filter("id == \(product.id)").first
+    
+        try! realm.write {
+            guard let item = queryItem else { return }
+            item.name = product.name
+            item.wholeSalePrice = product.wholeSalePrice
+            item.retailPrice = product.retailPrice
+            item.quantity = product.quantity
+            realm.add(item, update: true)
+        }
+    }
 }

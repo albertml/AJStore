@@ -23,6 +23,7 @@ protocol ListItemViewToPresenterProtocol: class {
     func setTitle()
     func getItem()
     func deleteItem(item: ProductItem)
+    func goToItemDetail(item: ProductItem)
 }
 
 protocol ListItemInteractorToPresenterProtocol: class {
@@ -31,7 +32,7 @@ protocol ListItemInteractorToPresenterProtocol: class {
 
 protocol ListItemPresenterToRouterProtocol: class {
     static func createListItemModule() -> ListItemViewController
-    func pushToProfileDetailScreen(viewController: ListItemViewController, user: String)
+    func pushToEditItemScreen(viewController: ListItemViewController, item: ProductItem)
 }
 
 protocol ListItemPresenterToInteractorProtocol: class {

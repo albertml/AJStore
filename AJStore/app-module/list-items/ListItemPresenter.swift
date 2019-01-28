@@ -31,6 +31,10 @@ class ListItemPresenter: ListItemViewToPresenterProtocol {
     func deleteItem(item: ProductItem) {
         interactor.deleteItem(item: item)
     }
+    
+    func goToItemDetail(item: ProductItem) {
+        router?.pushToEditItemScreen(viewController: view, item: item)
+    }
 }
 
 extension ListItemPresenter: ListItemInteractorToPresenterProtocol {

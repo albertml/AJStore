@@ -130,6 +130,16 @@ extension ListItemViewController: UITableViewDelegate {
         return headerListItem
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let nnpresenter = presentor {
+            if nnpresenter.isFiltering() {
+                nnpresenter.goToItemDetail(item: nnpresenter.filteredProductItems[indexPath.row])
+            } else {
+                nnpresenter.goToItemDetail(item: nnpresenter.productItems[indexPath.row])
+            }
+        }
+    }
+    
     @available(iOS 11.0, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action =  UIContextualAction(style: .normal, title: "", handler: { (action,view,completionHandler ) in

@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AJStore/app-module/list-items/ListItemPresenter.swift"
-            timestampString = "569814541.5759439"
+            filePath = "AJStore/common-utils/Manager/RealmManager.swift"
+            timestampString = "570369222.389192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "successGettingItem(items:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AJStore/app-module/list-items/ListItemInteractor.swift"
-            timestampString = "569814541.575994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "getItem()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "updateItem(product:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

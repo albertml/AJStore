@@ -30,6 +30,13 @@
 		5072FE9421F60832004E08C3 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9321F60832004E08C3 /* AlertPresenter.swift */; };
 		5072FE9721F60EA1004E08C3 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9621F60EA1004E08C3 /* RealmManager.swift */; };
 		5072FE9921F61CF5004E08C3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072FE9821F61CF5004E08C3 /* UIColor+Extensions.swift */; };
+		50A37F2A21FEFEC200D366A4 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F2921FEFEC200D366A4 /* EditItemViewController.swift */; };
+		50A37F2C21FEFEE000D366A4 /* EditItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F2B21FEFEE000D366A4 /* EditItemPresenter.swift */; };
+		50A37F2E21FEFF1300D366A4 /* EditItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F2D21FEFF1300D366A4 /* EditItemInteractor.swift */; };
+		50A37F3021FEFF2400D366A4 /* EditItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F2F21FEFF2400D366A4 /* EditItemProtocol.swift */; };
+		50A37F3321FEFF9000D366A4 /* EditItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A37F3221FEFF9000D366A4 /* EditItem.storyboard */; };
+		50A37F3521FF0AE100D366A4 /* EditItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F3421FF0AE100D366A4 /* EditItemRouter.swift */; };
+		50A37F3721FF1F2D00D366A4 /* ListItemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F3621FF1F2D00D366A4 /* ListItemViewController+Extensions.swift */; };
 		AA0F95601FFE99A9BA0E7C4A /* Pods_AJStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +67,13 @@
 		5072FE9321F60832004E08C3 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		5072FE9621F60EA1004E08C3 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5072FE9821F61CF5004E08C3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		50A37F2921FEFEC200D366A4 /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
+		50A37F2B21FEFEE000D366A4 /* EditItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemPresenter.swift; sourceTree = "<group>"; };
+		50A37F2D21FEFF1300D366A4 /* EditItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemInteractor.swift; sourceTree = "<group>"; };
+		50A37F2F21FEFF2400D366A4 /* EditItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemProtocol.swift; sourceTree = "<group>"; };
+		50A37F3221FEFF9000D366A4 /* EditItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditItem.storyboard; sourceTree = "<group>"; };
+		50A37F3421FF0AE100D366A4 /* EditItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemRouter.swift; sourceTree = "<group>"; };
+		50A37F3621FF1F2D00D366A4 /* ListItemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewController+Extensions.swift"; sourceTree = "<group>"; };
 		7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AJStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E3D534BD58F68116304F0B /* Pods-AJStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AJStore/Pods-AJStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +132,7 @@
 		5072FE5B21F555C2004E08C3 /* app-module */ = {
 			isa = PBXGroup;
 			children = (
-				5072FE5F21F555F4004E08C3 /* add-item */,
+				5072FE5F21F555F4004E08C3 /* edit-item */,
 				5072FE5D21F555E2004E08C3 /* list-items */,
 			);
 			path = "app-module";
@@ -137,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				5072FE6621F55831004E08C3 /* ListItemViewController.swift */,
+				50A37F3621FF1F2D00D366A4 /* ListItemViewController+Extensions.swift */,
 				5072FE6821F55845004E08C3 /* ListItemEntity.swift */,
 				5072FE6A21F55856004E08C3 /* ListItemInteractor.swift */,
 				5072FE6C21F55867004E08C3 /* ListItemPresenter.swift */,
@@ -148,11 +163,17 @@
 			path = "list-items";
 			sourceTree = "<group>";
 		};
-		5072FE5F21F555F4004E08C3 /* add-item */ = {
+		5072FE5F21F555F4004E08C3 /* edit-item */ = {
 			isa = PBXGroup;
 			children = (
+				50A37F2921FEFEC200D366A4 /* EditItemViewController.swift */,
+				50A37F2B21FEFEE000D366A4 /* EditItemPresenter.swift */,
+				50A37F2D21FEFF1300D366A4 /* EditItemInteractor.swift */,
+				50A37F2F21FEFF2400D366A4 /* EditItemProtocol.swift */,
+				50A37F3421FF0AE100D366A4 /* EditItemRouter.swift */,
+				50A37F3121FEFF7500D366A4 /* StoryBoard */,
 			);
-			path = "add-item";
+			path = "edit-item";
 			sourceTree = "<group>";
 		};
 		5072FE7221F55981004E08C3 /* common-utils */ = {
@@ -220,6 +241,14 @@
 				5072FE9621F60EA1004E08C3 /* RealmManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		50A37F3121FEFF7500D366A4 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				50A37F3221FEFF9000D366A4 /* EditItem.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		8852D1D00821C87267749445 /* Frameworks */ = {
@@ -294,6 +323,7 @@
 				5072FE7921F5665A004E08C3 /* ListItemTableViewCell.xib in Resources */,
 				5072FE5421F54BA4004E08C3 /* LaunchScreen.storyboard in Resources */,
 				5072FE5121F54BA4004E08C3 /* Assets.xcassets in Resources */,
+				50A37F3321FEFF9000D366A4 /* EditItem.storyboard in Resources */,
 				5072FE7B21F567B7004E08C3 /* ListItemHeader.xib in Resources */,
 				5072FE8D21F5DD7E004E08C3 /* AddItemDialog.xib in Resources */,
 				5072FE4F21F54BA3004E08C3 /* ListItem.storyboard in Resources */,
@@ -380,12 +410,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5072FE9121F5E0CA004E08C3 /* UIView+Extensions.swift in Sources */,
+				50A37F2C21FEFEE000D366A4 /* EditItemPresenter.swift in Sources */,
+				50A37F2A21FEFEC200D366A4 /* EditItemViewController.swift in Sources */,
 				5072FE7521F559BF004E08C3 /* AppStoryboard.swift in Sources */,
 				5072FE8121F56913004E08C3 /* ReusableView.swift in Sources */,
 				5072FE6B21F55856004E08C3 /* ListItemInteractor.swift in Sources */,
 				5072FE6D21F55867004E08C3 /* ListItemPresenter.swift in Sources */,
+				50A37F2E21FEFF1300D366A4 /* EditItemInteractor.swift in Sources */,
 				5072FE9421F60832004E08C3 /* AlertPresenter.swift in Sources */,
+				50A37F3021FEFF2400D366A4 /* EditItemProtocol.swift in Sources */,
 				5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */,
+				50A37F3721FF1F2D00D366A4 /* ListItemViewController+Extensions.swift in Sources */,
 				5072FE8F21F5E083004E08C3 /* AddItemDialog.swift in Sources */,
 				5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */,
 				5072FE9721F60EA1004E08C3 /* RealmManager.swift in Sources */,
@@ -396,6 +431,7 @@
 				5072FE6921F55845004E08C3 /* ListItemEntity.swift in Sources */,
 				5072FE9921F61CF5004E08C3 /* UIColor+Extensions.swift in Sources */,
 				5072FE8621F56A1D004E08C3 /* Contants.swift in Sources */,
+				50A37F3521FF0AE100D366A4 /* EditItemRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

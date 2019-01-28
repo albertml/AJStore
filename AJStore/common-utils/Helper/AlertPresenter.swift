@@ -38,6 +38,15 @@ extension AlertPresenterProtocol {
         
         alert.showDialogInView()
     }
+    
+    func showDialogInViewWithOkAction(vc: UIViewController, message: String, callBack: @escaping (Bool) -> (Void)) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            callBack(false)
+        }))
+        
+        vc.present(alert, animated: true, completion: nil)
+    }
 }
 
 
