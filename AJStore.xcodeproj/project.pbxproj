@@ -123,8 +123,7 @@
 				5072FE5C21F555D2004E08C3 /* app-settings */,
 				5072FE7221F55981004E08C3 /* common-utils */,
 				5072FE5B21F555C2004E08C3 /* app-module */,
-				5072FE5021F54BA4004E08C3 /* Assets.xcassets */,
-				5072FE5221F54BA4004E08C3 /* LaunchScreen.storyboard */,
+				50A37F3A21FF417B00D366A4 /* app-resources */,
 			);
 			path = AJStore;
 			sourceTree = "<group>";
@@ -132,6 +131,7 @@
 		5072FE5B21F555C2004E08C3 /* app-module */ = {
 			isa = PBXGroup;
 			children = (
+				50A37F3821FF410800D366A4 /* add-item */,
 				5072FE5F21F555F4004E08C3 /* edit-item */,
 				5072FE5D21F555E2004E08C3 /* list-items */,
 			);
@@ -210,11 +210,7 @@
 		5072FE7721F55B76004E08C3 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				5072FE7821F5665A004E08C3 /* ListItemTableViewCell.xib */,
-				5072FE7A21F567B7004E08C3 /* ListItemHeader.xib */,
-				5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */,
-				5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */,
-				5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */,
+				50A37F3921FF414B00D366A4 /* ListItemCell */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -249,6 +245,34 @@
 				50A37F3221FEFF9000D366A4 /* EditItem.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		50A37F3821FF410800D366A4 /* add-item */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE8C21F5DD7E004E08C3 /* AddItemDialog.xib */,
+				5072FE8E21F5E083004E08C3 /* AddItemDialog.swift */,
+			);
+			path = "add-item";
+			sourceTree = "<group>";
+		};
+		50A37F3921FF414B00D366A4 /* ListItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE7821F5665A004E08C3 /* ListItemTableViewCell.xib */,
+				5072FE7A21F567B7004E08C3 /* ListItemHeader.xib */,
+				5072FE8221F56979004E08C3 /* ListItemTableViewCell.swift */,
+			);
+			path = ListItemCell;
+			sourceTree = "<group>";
+		};
+		50A37F3A21FF417B00D366A4 /* app-resources */ = {
+			isa = PBXGroup;
+			children = (
+				5072FE5021F54BA4004E08C3 /* Assets.xcassets */,
+				5072FE5221F54BA4004E08C3 /* LaunchScreen.storyboard */,
+			);
+			path = "app-resources";
 			sourceTree = "<group>";
 		};
 		8852D1D00821C87267749445 /* Frameworks */ = {
