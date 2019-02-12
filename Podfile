@@ -11,5 +11,5 @@ target 'AJStore' do
   pod 'PopupKit'
   pod 'LGButton'
   pod 'IQKeyboardManagerSwift'
-
+  pod 'R.swift'
 end

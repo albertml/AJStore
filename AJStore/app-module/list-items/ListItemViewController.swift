@@ -70,7 +70,8 @@ class ListItemViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func btnAdd(_ sender: LGButton) {
-        let addItemView: AddItemDialog = UIView.fromNib()
+//        let addItemView: AddItemDialog = UIView.fromNib()
+        let addItemView = R.nib.addItemDialog(owner: self)!
         addItemView.delegate = self
         addItemView.presentor = self
         popUpView = PopupView(contentView: addItemView, showType: PopupView.ShowType.bounceInFromTop, dismissType: PopupView.DismissType.fadeOut, maskType: PopupView.MaskType.dimmed, shouldDismissOnBackgroundTouch: true, shouldDismissOnContentTouch: false)

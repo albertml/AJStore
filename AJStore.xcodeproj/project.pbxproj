@@ -37,6 +37,7 @@
 		50A37F3321FEFF9000D366A4 /* EditItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A37F3221FEFF9000D366A4 /* EditItem.storyboard */; };
 		50A37F3521FF0AE100D366A4 /* EditItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F3421FF0AE100D366A4 /* EditItemRouter.swift */; };
 		50A37F3721FF1F2D00D366A4 /* ListItemViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A37F3621FF1F2D00D366A4 /* ListItemViewController+Extensions.swift */; };
+		50DBABB12212B3C6003D5237 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBABB02212B3C6003D5237 /* R.generated.swift */; };
 		AA0F95601FFE99A9BA0E7C4A /* Pods_AJStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		50A37F3221FEFF9000D366A4 /* EditItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditItem.storyboard; sourceTree = "<group>"; };
 		50A37F3421FF0AE100D366A4 /* EditItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemRouter.swift; sourceTree = "<group>"; };
 		50A37F3621FF1F2D00D366A4 /* ListItemViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItemViewController+Extensions.swift"; sourceTree = "<group>"; };
+		50DBABB02212B3C6003D5237 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		7C279E78ECB3531265FF6931 /* Pods_AJStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AJStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E3D534BD58F68116304F0B /* Pods-AJStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AJStore/Pods-AJStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 		5072FE7221F55981004E08C3 /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				50DBABAF2212B3A5003D5237 /* Resources */,
 				5072FE9521F60E8F004E08C3 /* Manager */,
 				5072FE9221F6081E004E08C3 /* Helper */,
 				5072FE8421F56A0C004E08C3 /* Constants */,
@@ -275,6 +278,14 @@
 			path = "app-resources";
 			sourceTree = "<group>";
 		};
+		50DBABAF2212B3A5003D5237 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50DBABB02212B3C6003D5237 /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8852D1D00821C87267749445 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,10 +302,11 @@
 			buildConfigurationList = 5072FE5821F54BA4004E08C3 /* Build configuration list for PBXNativeTarget "AJStore" */;
 			buildPhases = (
 				5470590B4D0A14D615A678A9 /* [CP] Check Pods Manifest.lock */,
+				50DBABAE2212B190003D5237 /* R.swift */,
 				5072FE4221F54BA3004E08C3 /* Sources */,
 				5072FE4321F54BA3004E08C3 /* Frameworks */,
 				5072FE4421F54BA3004E08C3 /* Resources */,
-				5072FE8721F5AD65004E08C3 /* ShellScript */,
+				5072FE8721F5AD65004E08C3 /* SwiftLint */,
 				E2BF7EE724B4383942FA9B63 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -357,7 +369,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5072FE8721F5AD65004E08C3 /* ShellScript */ = {
+		5072FE8721F5AD65004E08C3 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,6 +378,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -373,6 +386,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		50DBABAE2212B190003D5237 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 		5470590B4D0A14D615A678A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -408,6 +441,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupKit/PopupKit.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -418,6 +452,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -444,6 +479,7 @@
 				5072FE9421F60832004E08C3 /* AlertPresenter.swift in Sources */,
 				50A37F3021FEFF2400D366A4 /* EditItemProtocol.swift in Sources */,
 				5072FE7121F5588D004E08C3 /* ListItemRouter.swift in Sources */,
+				50DBABB12212B3C6003D5237 /* R.generated.swift in Sources */,
 				50A37F3721FF1F2D00D366A4 /* ListItemViewController+Extensions.swift in Sources */,
 				5072FE8F21F5E083004E08C3 /* AddItemDialog.swift in Sources */,
 				5072FE6721F55831004E08C3 /* ListItemViewController.swift in Sources */,

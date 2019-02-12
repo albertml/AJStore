@@ -13,7 +13,7 @@ class ListItemRouter: ListItemPresenterToRouterProtocol {
     
     static func createListItemModule() -> ListItemViewController {
         
-        let listItemVC = ListItemViewController.instantiate(fromAppStoryboard: .ListItem)
+        let listItemVC = R.storyboard.listItem.listItemViewControllerID()! // ListItemViewController.instantiate(fromAppStoryboard: .ListItem)
         
         let presenter: ListItemViewToPresenterProtocol & ListItemInteractorToPresenterProtocol = ListItemPresenter()
         let interactor: ListItemPresenterToInteractorProtocol = ListItemInteractor()
@@ -29,8 +29,8 @@ class ListItemRouter: ListItemPresenterToRouterProtocol {
     }
     
     func pushToEditItemScreen(viewController: ListItemViewController, item: ProductItem) {
-        var editItemModule = EditItemViewController.instantiate(fromAppStoryboard: .EditItem)
-        editItemModule.delegate = viewController as? EditItemUpdatedProtocol
+        var editItemModule = R.storyboard.editItem.editItemViewControllerID()! //EditItemViewController.instantiate(fromAppStoryboard: .EditItem)
+        editItemModule.delegate = viewController
         editItemModule = EditItemRouter.createEditItemModule(item: item)
         viewController.navigationController?.pushViewController(editItemModule,animated: true)
     }
