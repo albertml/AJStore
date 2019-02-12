@@ -10,6 +10,7 @@ import UIKit
 import LGButton
 import PopupKit
 import ViewAnimator
+import SwipeCellKit
 
 class ListItemViewController: UIViewController {
 
@@ -109,10 +110,11 @@ extension ListItemViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let nnpresenter = presentor {
             let listItemCell: ListItemTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
+            listItemCell.delegate = self
             if nnpresenter.isFiltering() {
                 listItemCell.product = nnpresenter.filteredProductItems[indexPath.row]
             } else {
-               listItemCell.product = nnpresenter.productItems[indexPath.row]
+                listItemCell.product = nnpresenter.productItems[indexPath.row]
             }
             return listItemCell
         }
@@ -144,10 +146,14 @@ extension ListItemViewController: UITableViewDelegate {
             }
         }
     }
+}
+
+extension ListItemViewController: SwipeTableViewCellDelegate {
     
-    @available(iOS 11.0, *)
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action =  UIContextualAction(style: .normal, title: "", handler: { (action,view,completionHandler ) in
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
             if let nnpresenter = self.presentor {
                 if nnpresenter.isFiltering() {
                     nnpresenter.deleteItem(item: nnpresenter.filteredProductItems[indexPath.row])
@@ -157,17 +163,18 @@ extension ListItemViewController: UITableViewDelegate {
                     nnpresenter.productItems.remove(at: indexPath.row)
                 }
             }
-            self.tblListItems.reloadData()
-            completionHandler(true)
-        })
-        action.image = #imageLiteral(resourceName: "ic_trash")
-        action.backgroundColor = UIColor.init(hex: 0xff0000)
-        let confrigation = UISwipeActionsConfiguration(actions: [action])
+        }
         
-        return confrigation
+        // customize the action appearance
+        deleteAction.image = R.image.ic_trash()
+        
+        return [deleteAction]
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
     }
 }

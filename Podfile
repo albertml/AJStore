@@ -13,4 +13,5 @@ target 'AJStore' do
   pod 'IQKeyboardManagerSwift'
   pod 'R.swift'
   pod "ViewAnimator"
+  pod 'SwipeCellKit'
 end

@@ -10,6 +10,7 @@ PODS:
   - Realm/Headers (3.13.1)
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
+  - SwipeCellKit (2.5.1)
   - ViewAnimator (2.2.2)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - PopupKit
   - R.swift
   - RealmSwift
+  - SwipeCellKit
   - ViewAnimator
 
 SPEC REPOS:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - R.swift.Library
     - Realm
     - RealmSwift
+    - SwipeCellKit
     - ViewAnimator
 
 SPEC CHECKSUMS:
@@ -39,8 +42,9 @@ SPEC CHECKSUMS:
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
   ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
-PODFILE CHECKSUM: cd6236473d88953b8dafe1acd3b409c442ae5b3d
+PODFILE CHECKSUM: 6f6595da607767794578b10a93d97cc2a93b0bc3
 
 COCOAPODS: 1.5.3

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class ListItemTableViewCell: UITableViewCell {
+class ListItemTableViewCell: SwipeTableViewCell {
 
     // MARK: Properties
     
