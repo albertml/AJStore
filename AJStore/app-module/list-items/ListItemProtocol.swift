@@ -6,11 +6,14 @@
 //  Copyright © 2019 Albert. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ListItemPresenterToViewProtocol: class {
     func setTitle(pageTitle: String)
     func getAllProduct()
+    func setupRefreshControl(refreshControl: UIRefreshControl)
+    func setupTableViewCells()
+    func setupSearchController(searchController: UISearchController)
 }
 
 protocol ListItemViewToPresenterProtocol: class {
@@ -24,6 +27,9 @@ protocol ListItemViewToPresenterProtocol: class {
     func getItem()
     func deleteItem(item: ProductItem)
     func goToItemDetail(item: ProductItem)
+    func setupRefreshControl()
+    func setupSearchController(vc: UIViewController)
+    func setupTableViewCells()
 }
 
 protocol ListItemInteractorToPresenterProtocol: class {

@@ -12,4 +12,5 @@ target 'AJStore' do
   pod 'LGButton'
   pod 'IQKeyboardManagerSwift'
   pod 'R.swift'
+  pod "ViewAnimator"
 end

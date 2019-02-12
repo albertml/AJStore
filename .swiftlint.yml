@@ -18,3 +18,4 @@ disabled_rules: # rule identifiers to exclude from running
   - void_return
   - unused_closure_parameter
   - unused_optional_binding
+  - weak_delegate

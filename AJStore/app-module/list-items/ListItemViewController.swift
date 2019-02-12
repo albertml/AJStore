@@ -9,6 +9,7 @@
 import UIKit
 import LGButton
 import PopupKit
+import ViewAnimator
 
 class ListItemViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class ListItemViewController: UIViewController {
     // MARK: Properties
     
     var presentor: ListItemViewToPresenterProtocol?
-    let searchController = UISearchController(searchResultsController: nil)
+    var searchController: UISearchController!
     var popUpView: PopupView!
     
     // MARK: VC Life Cycle
@@ -28,37 +29,16 @@ class ListItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presentor?.setTitle()
-        
-        tblListItems.tableFooterView = UIView(frame: CGRect.zero)
-        let headerCell = UINib(nibName: NibName.ListItemHeader, bundle: nil)
-        tblListItems.register(headerCell, forCellReuseIdentifier: NibName.ListItemHeader)
-        let contentCell = UINib(nibName: NibName.ListItemContent, bundle: nil)
-        tblListItems.register(contentCell, forCellReuseIdentifier: CellIdentifier.ListItem)
- 
-        presentor?.getItem()
-        
-        var refreshColor: UIColor!
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
-            refreshColor = UIColor.init(hex: 0x009051)
-        } else {
-            refreshColor = UIColor.gray
         }
         
-        let refreshControls = UIRefreshControl()
-        let attr = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor: refreshColor])
-        refreshControls.attributedTitle = NSAttributedString(attributedString: attr)
-        refreshControls.tintColor = refreshColor
-        refreshControls.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        tblListItems.refreshControl = refreshControls
-        
-        // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Product"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        presentor?.setupRefreshControl()
+        presentor?.setupSearchController(vc: self)
+        presentor?.setTitle()
+        presentor?.setupTableViewCells()
+        presentor?.getItem()
+        tableViewAnimations()
     }
     
     // MARK: - Methods
@@ -67,11 +47,17 @@ class ListItemViewController: UIViewController {
         presentor?.getItem()
     }
     
+    private func tableViewAnimations() {
+        let animation = [AnimationType.from(direction: .right, offset: 30.0)]
+        //        let fromAnimation = AnimationType.from(direction: .right, offset: 30.0)
+        //        let zoomAnimation = AnimationType.zoom(scale: 0.2)
+        UIView.animate(views: tblListItems.visibleCells, animations: animation, completion: nil)
+    }
+    
     // MARK: - Actions
     
     @IBAction func btnAdd(_ sender: LGButton) {
-//        let addItemView: AddItemDialog = UIView.fromNib()
-        let addItemView = R.nib.addItemDialog(owner: self)!
+        let addItemView: AddItemDialog = UIView.fromNib()
         addItemView.delegate = self
         addItemView.presentor = self
         popUpView = PopupView(contentView: addItemView, showType: PopupView.ShowType.bounceInFromTop, dismissType: PopupView.DismissType.fadeOut, maskType: PopupView.MaskType.dimmed, shouldDismissOnBackgroundTouch: true, shouldDismissOnContentTouch: false)
@@ -89,6 +75,24 @@ extension ListItemViewController: ListItemPresenterToViewProtocol {
         tblListItems.reloadData()
     }
     
+    func setupRefreshControl(refreshControl: UIRefreshControl) {
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tblListItems.refreshControl = refreshControl
+    }
+    
+    func setupTableViewCells() {
+        tblListItems.tableFooterView = UIView(frame: CGRect.zero)
+        let headerCell = UINib(nibName: NibName.ListItemHeader, bundle: nil)
+        tblListItems.register(headerCell, forCellReuseIdentifier: NibName.ListItemHeader)
+        let contentCell = UINib(nibName: NibName.ListItemContent, bundle: nil)
+        tblListItems.register(contentCell, forCellReuseIdentifier: CellIdentifier.ListItem)
+    }
+    
+    func setupSearchController(searchController: UISearchController) {
+        self.searchController = searchController
+        navigationItem.searchController = self.searchController
+        definesPresentationContext = true
+    }
 }
 
 extension ListItemViewController: UITableViewDataSource {
@@ -165,36 +169,5 @@ extension ListItemViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
-    }
-}
-
-extension ListItemViewController: UISearchResultsUpdating {
-    
-    // MARK: - Private instance methods
-    
-    func searchBarIsEmpty() -> Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        if let nnpresenter = presentor {
-            nnpresenter.filteredProductItems = nnpresenter.productItems.filter({( product : ProductItem) -> Bool in
-                return product.name.lowercased().contains(searchText.lowercased())
-            })
-            tblListItems.reloadData()
-        }
-    }
-    
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-
-    }
-}
-
-extension ListItemViewController: AddItemProtocol {
-    func doneAddItem() {
-        popUpView.dismissPresentingPopup()
-        presentor?.getItem()
     }
 }

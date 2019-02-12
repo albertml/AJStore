@@ -13,7 +13,7 @@ class ListItemRouter: ListItemPresenterToRouterProtocol {
     
     static func createListItemModule() -> ListItemViewController {
         
-        let listItemVC = R.storyboard.listItem.listItemViewControllerID()! // ListItemViewController.instantiate(fromAppStoryboard: .ListItem)
+        let listItemVC = ListItemViewController.instantiate(fromAppStoryboard: .ListItem)
         
         let presenter: ListItemViewToPresenterProtocol & ListItemInteractorToPresenterProtocol = ListItemPresenter()
         let interactor: ListItemPresenterToInteractorProtocol = ListItemInteractor()

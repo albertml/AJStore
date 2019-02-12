@@ -29,6 +29,5 @@ struct EditItemRouter: EditItemPresenterToRouterProtocol {
     func pushToMovieScreen(navigationConroller navigationController: UINavigationController) {
         //
     }
-    
-    
+
 }

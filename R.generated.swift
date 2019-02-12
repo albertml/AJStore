@@ -16,16 +16,34 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
   struct color {
+    /// Color `flat_gray`.
+    static let flat_gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "flat_gray")
     /// Color `flat_red`.
     static let flat_red = Rswift.ColorResource(bundle: R.hostingBundle, name: "flat_red")
+    /// Color `flat_refresh_gray`.
+    static let flat_refresh_gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "flat_refresh_gray")
+    
+    /// `UIColor(named: "flat_gray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func flat_gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.flat_gray, compatibleWith: traitCollection)
+    }
     
     /// `UIColor(named: "flat_red", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
     static func flat_red(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.flat_red, compatibleWith: traitCollection)
+    }
+    
+    /// `UIColor(named: "flat_refresh_gray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func flat_refresh_gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.flat_refresh_gray, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
