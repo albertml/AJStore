@@ -1,4 +1,5 @@
 PODS:
+  - BarcodeScanner (4.1.3)
   - IQKeyboardManagerSwift (6.2.0)
   - LGButton (1.1.2)
   - PopupKit (3.1.1)
@@ -14,6 +15,7 @@ PODS:
   - ViewAnimator (2.2.2)
 
 DEPENDENCIES:
+  - BarcodeScanner
   - IQKeyboardManagerSwift
   - LGButton
   - PopupKit
@@ -24,6 +26,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BarcodeScanner
     - IQKeyboardManagerSwift
     - LGButton
     - PopupKit
@@ -35,6 +38,7 @@ SPEC REPOS:
     - ViewAnimator
 
 SPEC CHECKSUMS:
+  BarcodeScanner: fce1ad2b3f28286b1ab5091fe0979789618bee27
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   LGButton: 0e07c243d1655b507502c3b9271d3c3a7c22dcaa
   PopupKit: e362ed92148d831a9c38a2bc7a25893e46d64c54
@@ -45,6 +49,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
   ViewAnimator: 6eaa112663b6a2d9e6b2573df65b416dd051cbe4
 
-PODFILE CHECKSUM: 6f6595da607767794578b10a93d97cc2a93b0bc3
+PODFILE CHECKSUM: b518e6d860d139fba7b0c9298b15b2a3cc26365b
 
 COCOAPODS: 1.5.3

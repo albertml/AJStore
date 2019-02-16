@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E90EF8DE020582A41B500DF063AEE78E"
-               BlueprintName = "Realm"
+               BlueprintIdentifier = "39FC8B020BAFAD3C9E5D0E71C539C4F4"
+               BlueprintName = "BarcodeScanner"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Realm.framework">
+               BuildableName = "BarcodeScanner.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

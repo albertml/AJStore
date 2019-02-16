@@ -14,4 +14,5 @@ target 'AJStore' do
   pod 'R.swift'
   pod "ViewAnimator"
   pod 'SwipeCellKit'
+  pod 'BarcodeScanner'
 end
