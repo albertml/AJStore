@@ -36,11 +36,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_barcode_display" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-fu-hXW">
+                        <rect key="frame" x="286" y="21.5" width="16" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="B0b-5J-W20"/>
+                            <constraint firstAttribute="height" constant="21" id="wQl-4L-usL"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="BNZ-IJ-IB4" firstAttribute="leading" secondItem="WfP-cW-kfh" secondAttribute="trailing" constant="5" id="2jO-kl-VVh"/>
+                    <constraint firstItem="BNZ-IJ-IB4" firstAttribute="leading" secondItem="7nr-fu-hXW" secondAttribute="trailing" constant="-18.5" id="9Gd-i7-9OR"/>
                     <constraint firstItem="BNZ-IJ-IB4" firstAttribute="trailing" secondItem="Q6x-1S-djx" secondAttribute="trailingMargin" constant="10" id="C3y-bS-HOL"/>
+                    <constraint firstItem="7nr-fu-hXW" firstAttribute="centerY" secondItem="BNZ-IJ-IB4" secondAttribute="centerY" id="JGm-Nk-rng"/>
                     <constraint firstItem="WfP-cW-kfh" firstAttribute="leading" secondItem="wGM-Yd-Kgc" secondAttribute="trailing" constant="5" id="W3Z-wu-aYe"/>
                     <constraint firstItem="wGM-Yd-Kgc" firstAttribute="centerY" secondItem="Q6x-1S-djx" secondAttribute="centerY" id="YiC-L3-6P2"/>
                     <constraint firstItem="WfP-cW-kfh" firstAttribute="centerY" secondItem="wGM-Yd-Kgc" secondAttribute="centerY" id="l6v-hV-0yO"/>
@@ -51,6 +60,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imgBarCode" destination="7nr-fu-hXW" id="JOu-46-mJD"/>
                 <outlet property="lblName" destination="wGM-Yd-Kgc" id="uQU-c3-CuX"/>
                 <outlet property="lblPrice" destination="WfP-cW-kfh" id="bnW-Au-63t"/>
                 <outlet property="lblQuantity" destination="BNZ-IJ-IB4" id="Y9U-lS-i2y"/>
@@ -58,4 +68,7 @@
             <point key="canvasLocation" x="37.600000000000001" y="-143.02848575712144"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_barcode_display" width="37.5" height="37.5"/>
+    </resources>
 </document>

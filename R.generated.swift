@@ -49,10 +49,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `ic_add`.
     static let ic_add = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_add")
+    /// Image `ic_barcode_display`.
+    static let ic_barcode_display = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_barcode_display")
+    /// Image `ic_barcode`.
+    static let ic_barcode = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_barcode")
     /// Image `ic_edit`.
     static let ic_edit = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_edit")
     /// Image `ic_love`.
@@ -63,6 +67,16 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_add", bundle: ..., traitCollection: ...)`
     static func ic_add(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_add, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_barcode", bundle: ..., traitCollection: ...)`
+    static func ic_barcode(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_barcode, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_barcode_display", bundle: ..., traitCollection: ...)`
+    static func ic_barcode_display(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_barcode_display, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic_edit", bundle: ..., traitCollection: ...)`
@@ -184,6 +198,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _AddItemDialog.validate()
+      try _ListItemTableViewCell.validate()
     }
     
     struct _AddItemDialog: Rswift.NibResourceType, Rswift.Validatable {
@@ -217,7 +232,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _ListItemTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+    struct _ListItemTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = ListItemTableViewCell
       
       let bundle = R.hostingBundle
@@ -226,6 +241,12 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ListItemTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ListItemTableViewCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ic_barcode_display", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_barcode_display' is used in nib 'ListItemTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
       }
       
       fileprivate init() {}
@@ -251,6 +272,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_barcode", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_barcode' is used in storyboard 'EditItem', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_edit", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_edit' is used in storyboard 'EditItem', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }

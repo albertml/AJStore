@@ -9,11 +9,11 @@
 import UIKit
 
 class ListItemPresenter: ListItemViewToPresenterProtocol {
-    
+
     private var refreshControl: UIRefreshControl {
         var refreshColor: UIColor!
         if #available(iOS 11.0, *) {
-            refreshColor = R.color.flat_refresh_gray()
+            refreshColor = UIColor.white
         } else {
             refreshColor = R.color.flat_gray()
         }
@@ -36,6 +36,13 @@ class ListItemPresenter: ListItemViewToPresenterProtocol {
         view.setTitle(pageTitle: "A&J Store")
     }
     
+    func addRightBarButton() {
+        view.addRightBarButton()
+    }
+    
+    func scanItem() {
+        view.scanItem()
+    }
     func getItem() {
         interactor.getItem()
     }
@@ -67,6 +74,12 @@ class ListItemPresenter: ListItemViewToPresenterProtocol {
     
     func setupTableViewCells() {
         view.setupTableViewCells()
+    }
+    
+    func getSingleItem(barCode: String) {
+        let realmManager = RealmManager()
+        let searchItem = realmManager.getItem(barCode: barCode)
+        view.getSingleItem(productItem: searchItem)
     }
 }
 

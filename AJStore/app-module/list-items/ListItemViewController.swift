@@ -11,6 +11,7 @@ import LGButton
 import PopupKit
 import ViewAnimator
 import SwipeCellKit
+import BarcodeScanner
 
 class ListItemViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class ListItemViewController: UIViewController {
         presentor?.setTitle()
         presentor?.setupTableViewCells()
         presentor?.getItem()
+        presentor?.addRightBarButton()
         tableViewAnimations()
     }
     
@@ -67,6 +69,30 @@ class ListItemViewController: UIViewController {
 }
 
 extension ListItemViewController: ListItemPresenterToViewProtocol {
+    
+    func addRightBarButton() {
+        let scanItemBtn = UIBarButtonItem(image: R.image.ic_barcode(), style: .plain, target: self, action: #selector(scanItem))
+        self.navigationItem.rightBarButtonItem  = scanItemBtn
+    }
+    
+    @objc func scanItem() {
+        let viewController = BarcodeScannerViewController()
+        viewController.headerViewController.titleLabel.text = "Scan Barcode"
+        viewController.headerViewController.closeButton.tintColor = .red
+        viewController.cameraViewController.barCodeFocusViewType = .animated
+        viewController.cameraViewController.showsCameraButton = true
+        let title = NSAttributedString(
+            string: "Settings",
+            attributes: [.font: UIFont.boldSystemFont(ofSize: 17), .foregroundColor : UIColor.white]
+        )
+        viewController.cameraViewController.settingsButton.setAttributedTitle(title, for: UIControl.State())
+        viewController.codeDelegate = self
+        viewController.errorDelegate = self
+        viewController.dismissalDelegate = self
+        
+        present(viewController, animated: true, completion: nil)
+    }
+    
     func setTitle(pageTitle: String) {
         self.title = pageTitle
     }
@@ -145,36 +171,5 @@ extension ListItemViewController: UITableViewDelegate {
                 nnpresenter.goToItemDetail(item: nnpresenter.productItems[indexPath.row])
             }
         }
-    }
-}
-
-extension ListItemViewController: SwipeTableViewCellDelegate {
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-        
-        let deleteAction = SwipeAction(style: .destructive, title: nil) { action, indexPath in
-            if let nnpresenter = self.presentor {
-                if nnpresenter.isFiltering() {
-                    nnpresenter.deleteItem(item: nnpresenter.filteredProductItems[indexPath.row])
-                    nnpresenter.filteredProductItems.remove(at: indexPath.row)
-                } else {
-                    nnpresenter.deleteItem(item: nnpresenter.productItems[indexPath.row])
-                    nnpresenter.productItems.remove(at: indexPath.row)
-                }
-            }
-        }
-        
-        // customize the action appearance
-        deleteAction.image = R.image.ic_trash()
-        
-        return [deleteAction]
-    }
-    
-    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        options.transitionStyle = .border
-        return options
     }
 }

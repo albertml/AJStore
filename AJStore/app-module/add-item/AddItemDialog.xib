@@ -66,6 +66,22 @@
                         <action selector="btnAdd:" destination="iN0-l3-epB" eventType="touchUpInside" id="SeM-h2-2oL"/>
                     </connections>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-tJ-sgw" customClass="LGButton" customModule="LGButton">
+                    <rect key="frame" x="20" y="256" width="257" height="47"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                            <color key="value" red="0.0" green="0.56470588239999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="CLOSE"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnClose:" destination="iN0-l3-epB" eventType="touchUpInside" id="F4P-sa-oQL"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -76,6 +92,7 @@
                 <constraint firstItem="6Td-TM-KfS" firstAttribute="top" secondItem="6OM-eB-zfV" secondAttribute="bottom" constant="15" id="5Bd-3H-abK"/>
                 <constraint firstItem="0gH-d0-Cfz" firstAttribute="width" secondItem="bLc-Js-WAS" secondAttribute="width" id="8fb-an-EHN"/>
                 <constraint firstItem="6OM-eB-zfV" firstAttribute="top" secondItem="YL0-S9-Wie" secondAttribute="bottom" constant="23" id="Etl-Y7-hcE"/>
+                <constraint firstItem="S4X-tJ-sgw" firstAttribute="trailing" secondItem="lG2-Mv-jBG" secondAttribute="trailing" id="F8Y-BT-IEO"/>
                 <constraint firstItem="lG2-Mv-jBG" firstAttribute="leading" secondItem="0gH-d0-Cfz" secondAttribute="leading" id="Idh-zK-KmT"/>
                 <constraint firstItem="lG2-Mv-jBG" firstAttribute="trailing" secondItem="0gH-d0-Cfz" secondAttribute="trailing" id="LiE-Tc-3rf"/>
                 <constraint firstItem="YL0-S9-Wie" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MWf-IJ-isu"/>
@@ -83,13 +100,19 @@
                 <constraint firstItem="0gH-d0-Cfz" firstAttribute="top" secondItem="bLc-Js-WAS" secondAttribute="bottom" constant="15" id="Xx9-jK-xK1"/>
                 <constraint firstItem="6OM-eB-zfV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="aX6-iH-rS5"/>
                 <constraint firstItem="bLc-Js-WAS" firstAttribute="leading" secondItem="6Td-TM-KfS" secondAttribute="leading" id="afX-Ov-cMM"/>
+                <constraint firstItem="S4X-tJ-sgw" firstAttribute="top" secondItem="lG2-Mv-jBG" secondAttribute="top" id="jVc-xy-eMp"/>
                 <constraint firstItem="0gH-d0-Cfz" firstAttribute="leading" secondItem="bLc-Js-WAS" secondAttribute="leading" id="qVJ-GW-Fnr"/>
+                <constraint firstItem="S4X-tJ-sgw" firstAttribute="leading" secondItem="lG2-Mv-jBG" secondAttribute="leading" id="qjq-rR-0Eq"/>
+                <constraint firstItem="S4X-tJ-sgw" firstAttribute="bottom" secondItem="lG2-Mv-jBG" secondAttribute="bottom" id="rbE-I5-Xtt"/>
                 <constraint firstItem="6Td-TM-KfS" firstAttribute="leading" secondItem="6OM-eB-zfV" secondAttribute="leading" id="tGb-6x-kp9"/>
                 <constraint firstItem="bLc-Js-WAS" firstAttribute="width" secondItem="6Td-TM-KfS" secondAttribute="width" id="wNf-Xk-T4h"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="btnAddItemOutlet" destination="lG2-Mv-jBG" id="lRx-t0-xf0"/>
+                <outlet property="btnCloseOutlet" destination="S4X-tJ-sgw" id="QdH-RN-6RL"/>
+                <outlet property="lblScanItem" destination="YL0-S9-Wie" id="HSa-Ln-urs"/>
                 <outlet property="tfName" destination="6OM-eB-zfV" id="R7f-sb-l2u"/>
                 <outlet property="tfQuantity" destination="0gH-d0-Cfz" id="gW9-gM-mxH"/>
                 <outlet property="tfRetailPrice" destination="bLc-Js-WAS" id="5xo-RH-2yd"/>

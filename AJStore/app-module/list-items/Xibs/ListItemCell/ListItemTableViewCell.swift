@@ -13,9 +13,11 @@ class ListItemTableViewCell: SwipeTableViewCell {
 
     // MARK: Properties
     
+    @IBOutlet weak var imgBarCode: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblQuantity: UILabel!
+    
     
     // MARK: Properties
     
@@ -25,6 +27,7 @@ class ListItemTableViewCell: SwipeTableViewCell {
                 lblName.text = nnproduct.name
                 lblPrice.text = "W: \(String(format: "%.2f", nnproduct.wholeSalePrice))\nR: \(String(format: "%.2f", nnproduct.retailPrice))"
                 lblQuantity.text = "\(nnproduct.quantity)"
+                imgBarCode.isHidden = nnproduct.barCode.isEmpty
             }
         }
     }

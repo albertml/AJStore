@@ -45,7 +45,14 @@ struct RealmManager {
             item.wholeSalePrice = product.wholeSalePrice
             item.retailPrice = product.retailPrice
             item.quantity = product.quantity
+            item.barCode = product.barCode
             realm.add(item, update: true)
         }
+    }
+    
+    func getItem(barCode: String) -> ProductItem? {
+        let realm = try! Realm()
+        let productItem = realm.objects(ProductItem.self).filter("barCode == '\(barCode)'").first
+        return productItem
     }
 }

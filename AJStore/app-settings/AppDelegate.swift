@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        customizeNavigationStyle()
+        migrateRealmOldObject()
+        
         let listItemVC = ListItemRouter.createListItemModule()
         let navigationController = UINavigationController()
         navigationController.viewControllers = [listItemVC]
@@ -28,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         IQKeyboardManager.shared.enable = true
-        
-        migrateRealmOldObject()
         
         return true
     }
@@ -69,5 +70,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
         })
         Realm.Configuration.defaultConfiguration = config
+    }
+    
+    private func customizeNavigationStyle() {
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        if #available(iOS 11.0, *) {
+            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
     }
 }

@@ -14,6 +14,9 @@ protocol ListItemPresenterToViewProtocol: class {
     func setupRefreshControl(refreshControl: UIRefreshControl)
     func setupTableViewCells()
     func setupSearchController(searchController: UISearchController)
+    func addRightBarButton()
+    func scanItem()
+    func getSingleItem(productItem: ProductItem?)
 }
 
 protocol ListItemViewToPresenterProtocol: class {
@@ -30,6 +33,9 @@ protocol ListItemViewToPresenterProtocol: class {
     func setupRefreshControl()
     func setupSearchController(vc: UIViewController)
     func setupTableViewCells()
+    func addRightBarButton()
+    func scanItem()
+    func getSingleItem(barCode: String)
 }
 
 protocol ListItemInteractorToPresenterProtocol: class {
