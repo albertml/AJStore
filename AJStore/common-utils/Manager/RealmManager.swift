@@ -11,20 +11,21 @@ import RealmSwift
 
 struct RealmManager {
     
-    let realm = try! Realm()
-
     func saveDataToRealm(object: Object) {
+        let realm = try! Realm()
         try! realm.write {
             realm.add(object, update: true)
         }
     }
     
     func getAllItems() -> [ProductItem] {
+        let realm = try! Realm()
         let items = realm.objects(ProductItem.self)
         return Array(items)
     }
     
     func deleteItem(product: ProductItem) {
+        let realm = try! Realm()
         let queryItem = realm.objects(ProductItem.self).filter("id == \(product.id)").first
         guard let nnproductItem = queryItem else {
             return
@@ -35,6 +36,7 @@ struct RealmManager {
     }
     
     func updateItem(product: ProductItem) {
+        let realm = try! Realm()
         let queryItem = realm.objects(ProductItem.self).filter("id == \(product.id)").first
     
         try! realm.write {

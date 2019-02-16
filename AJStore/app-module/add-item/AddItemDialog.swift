@@ -39,7 +39,7 @@ class AddItemDialog: UIView {
             return
         } else {
             
-            _ = ProductItems(name: self.tfName.text!, wholeSalePrice: Double(self.tfWholeSalePrice.text!)!, retailPrice: Double(self.tfRetailPrice.text!)!, qty: Int(self.tfQuantity.text!)!)
+            _ = ProductItems(name: self.tfName.text!, wholeSalePrice: Double(self.tfWholeSalePrice.text!)!, retailPrice: Double(self.tfRetailPrice.text!)!, qty: Int(self.tfQuantity.text!)!, barCode: "")
             
             showDialogInViewWithAction(vc: self, message: "Item Added") { isAddMore -> (Void) in
                 if isAddMore == true {

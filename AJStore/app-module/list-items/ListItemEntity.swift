@@ -23,6 +23,7 @@ class ProductItem: Object {
     @objc dynamic var wholeSalePrice: Double = 0.0
     @objc dynamic var retailPrice: Double = 0.0
     @objc dynamic var quantity: Int = 0
+    @objc dynamic var barCode: String = ""
     
     override static func primaryKey() -> String? {
         return "id"
@@ -36,7 +37,7 @@ struct ProductItems {
     
     init() {}
     
-    init(name: String, wholeSalePrice: Double, retailPrice: Double, qty: Int) {
+    init(name: String, wholeSalePrice: Double, retailPrice: Double, qty: Int, barCode: String) {
         let id = generateRandomId()
         let queryPackage = realm.objects(ProductItem.self).filter("id == \(id)").first
         
@@ -46,6 +47,7 @@ struct ProductItems {
         productItem.wholeSalePrice = wholeSalePrice
         productItem.retailPrice = retailPrice
         productItem.quantity = qty
+        productItem.barCode = barCode
         
         if let _ = queryPackage {
             realmManager.saveDataToRealm(object: productItem)

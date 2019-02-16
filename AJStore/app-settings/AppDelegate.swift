@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         IQKeyboardManager.shared.enable = true
+        
+        migrateRealmOldObject()
         
         return true
     }
@@ -53,5 +56,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func migrateRealmOldObject() {
+        let config = Realm.Configuration(
+            // Set the new schema version. This must be greater than the previously used
+            // version (if you've never set a schema version before, the version is 0).
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 1 {
+                    migration.enumerateObjects(ofType: ProductItem.className()) { (_, newObject) in
+                        newObject?["barCode"] = ""
+                    }
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
+    }
 }
